@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hidden Gem - Retro Video Game Trade-In & Shop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "neon-pink": "#ff00ff",
+                        "neon-purple": "#9d00ff",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0a0a0a",
+                        "glass-dark": "rgba(16, 29, 34, 0.7)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(19, 182, 236, 0.4);
+            text-shadow: 0 0 8px rgba(19, 182, 236, 0.6);
+        }
+        .neon-glow-pink {
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+            text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+        }
+        .glass-card {
+            background: rgba(35, 63, 72, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-white/10 px-6 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="size-8 text-primary neon-glow-primary">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tighter uppercase italic">Hidden Gem</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-primary border-b-2 border-primary" href="index.html">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#trade-in">Trade-In</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#repair">Repair</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#vault">Vault</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="arcade.html">Arcade</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex items-center bg-white/5 rounded-lg px-3 py-1.5 border border-white/10">
+                    <span class="material-symbols-outlined text-primary text-xl">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-gray-500" placeholder="Find a classic..." type="text"/>
+                </div>
+                <button class="px-5 py-2 bg-primary text-black font-bold rounded-lg text-sm hover:scale-105 transition-transform neon-glow-primary">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <!-- New Arrivals Ticker -->
+    <div class="w-full bg-black/80 py-2 border-b border-primary/20 overflow-hidden">
+        <div class="ticker-wrap">
+            <div class="ticker-content flex gap-8 items-center">
+                <!-- Ticker Set 1 -->
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-neon-pink">joystick</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">NEW ARRIVAL: Earthbound (SNES)</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-primary">videogame_asset</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">RESTOCK: GameBoy Color Atomic Purple</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-neon-purple">star</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">MINT: Chrono Trigger (SNES)</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-primary">terminal</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">Neo Geo AES System In-Stock</p>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-neon-pink">joystick</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">NEW ARRIVAL: Earthbound (SNES)</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-primary">videogame_asset</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">RESTOCK: GameBoy Color Atomic Purple</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 border-r border-white/10">
+                    <span class="material-symbols-outlined text-neon-purple">star</span>
+                    <p class="text-xs font-bold uppercase tracking-widest">MINT: Chrono Trigger (SNES)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-neon-purple rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-black rounded-xl overflow-hidden aspect-video flex items-center justify-center border border-white/10">
+                    <div class="w-full h-full bg-center bg-cover" data-alt="Rare Super Nintendo console with neon glowing aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZNj9kQ5nGmnXkjU_vnxUmSoMTNcOYRSvdFdEKRU6GpV240UiRRJWSDbhsN5XbuHZ9cshGqjVt46eQEtZc_3yzA33ieZBgfp0nVSXbMXywSxQ0c5vUa4oukrke4N11tUXP94ZOh5IqhdSDJdjmqnFWFVUY-K2YRITYtNwaiEYOwqLFWzxsJGesUeivPva2DJP2nHmDGOdnUXuRiPwf0n-soYlOpHgnU7kU7ivdRaamMIZ-weFG9_tzBrcPuecei_EvL8EcpRJKLn0n');">
+                    </div>
+                    <div class="absolute bottom-4 left-4 glass-card px-4 py-2 rounded-lg">
+                        <p class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Collector's Grade</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-8">
+                <div class="space-y-4">
+                    <h1 class="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tighter uppercase italic">
+                        Unlock the Value of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-neon-pink to-neon-purple">Your Past</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg max-w-md">
+                        The ultimate destination for retro collectors. Trade your old games for modern credit or cold hard cash.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-8 py-4 bg-primary text-black font-black uppercase tracking-wider rounded-lg hover:scale-105 transition-all neon-glow-primary">
+                        Trade-In Now
+                    </button>
+                    <button class="px-8 py-4 border-2 border-neon-pink text-neon-pink font-black uppercase tracking-wider rounded-lg hover:bg-neon-pink/10 transition-all neon-glow-pink">
+                        Browse Vault
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section Header -->
+        <div id="repair" class="mb-10 flex items-center gap-4">
+            <h2 class="text-3xl font-black uppercase italic tracking-tighter">Pro Services</h2>
+            <div class="h-[2px] flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+        </div>
+
+        <!-- Image Grid Services -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            <!-- Service 1 -->
+            <div id="trade-in" class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl"></div>
+                <div class="relative glass-card rounded-xl p-8 flex flex-col gap-6 h-full border border-white/5">
+                    <div class="size-16 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-4xl">calculate</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Trade-In Estimator</h3>
+                        <p class="text-gray-400">Wondering what your childhood collection is worth? Get an instant, fair-market quote for your consoles and cartridges.</p>
+                    </div>
+                    <div class="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-primary font-bold uppercase tracking-widest text-sm">Value your loot</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-pink to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-xl"></div>
+                <div class="relative glass-card rounded-xl p-8 flex flex-col gap-6 h-full border border-white/5">
+                    <div class="size-16 rounded-lg bg-neon-pink/20 flex items-center justify-center text-neon-pink">
+                        <span class="material-symbols-outlined text-4xl">build</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Console &amp; Disc Repair</h3>
+                        <p class="text-gray-400">Save your saves. Professional restoration for vintage hardware, battery replacements, and disc resurfacing.</p>
+                    </div>
+                    <div class="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-neon-pink font-bold uppercase tracking-widest text-sm">Repair Service</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Feed Grid -->
+        <div id="vault" class="mb-10 flex items-center gap-4">
+            <h2 class="text-3xl font-black uppercase italic tracking-tighter">On The Gram</h2>
+            <div class="h-[2px] flex-grow bg-gradient-to-r from-white/20 to-transparent"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-gray-500">#HiddenGemRetro</p>
+        </div>
+
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
+            <div class="aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+                <div class="w-full h-full bg-center bg-cover transition-transform duration-700 hover:scale-110" data-alt="Rare GameBoy color handheld collection" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeTx2fZ1KX5oWa_OkEg4HXL4XkDBGE83F677OmQo8GPwdUiWpY7pKIjAkWgVyZOp8WdLBIglkGaDlaJV0gd6loZ5yP4SC_n6tRugZGoNq190FrXb4Vv2p8cPgdWxrLIsm1laO9MyeKJ5gGZWwQMf5mz5PyYp3mua7DjiPc5yN0znzZcaJHuYga1a1TXK_vyVyyPCI8N3BD0F6hKvK1s5GCr3YDkn-ulwJEozh_gFld5RVcEBvgUHKwOkOnY05vL3iDXEHThYbBj4DW');"></div>
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+                <div class="w-full h-full bg-center bg-cover transition-transform duration-700 hover:scale-110" data-alt="Stack of vintage SNES game cartridges" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGuktaYh2VelD4usVLS5Afl5fo1WKYCRkQfWkt4u3_WTT69YcDO8YG4wTohvTbhxuP7V9gM3XK9cZVbtJhfJpU3W_4ncMB0ziury55B8PxDfBO9h-t0OM8ojAEkdD56Uycj7Bw24Rrmtj9r-ABEdHMFkNWDCouSw5Fe-QZtl-8m4DU1isISrCK62r98K6pmGWUCHpa2B96dPq4v8HkuqmHPQi6MoFXZGLPsXZ_87pMVK-jdOc2I9qNEfxUJRydqO2idtGrIpiof1PU');"></div>
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+                <div class="w-full h-full bg-center bg-cover transition-transform duration-700 hover:scale-110" data-alt="Retro gaming setup with CRT monitor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmPmtuRysdpmSw09jI8zB1vQDK_z4b37w3Clq6BQsPPMRUmU_kN0wNmLeRXgj9U1U8OHUh7O7-RJIFWyw8dAXUtcpmmM6GPq22ui0fAXuYXic6o4ue3pptjpwClTwOTMnol2DLuxqtPTAiILo6de_OlvgKrJCypaR-VHnmSi476Rti9Mn-xFCtcveJsNFQhm6BOV0F2WSVqzn2tjfhc-NJRTNozA4hIoUcL8jJGlberL-tdd30AbvcpBIDQ6Z5YGdB9YG6lbnKWsxB');"></div>
+            </div>
+            <div class="aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+                <div class="w-full h-full bg-center bg-cover transition-transform duration-700 hover:scale-110" data-alt="Collection of classic PlayStation 1 games" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1UqtLFgc-u775tCcmxdRT06GmYIoE9aiiS2k8xWhF4O4A_qYymBbSxnd1k-M6KhiTqZUY9AbylZr2_Bs2fUhmm8MVWmaloSn9x-aVxbNfxjnUqAuwyVtB8leCR_Q77OWqtcGeo4FPMqd9_-MaZjeGChWptFQrDQGZrPbOWW9fHY40cjUzJY4bJx_DtLl9t1nrr2_HFbsTLi2PGxkwRXyyoz1HRaFKL_o1TMbLIT_tGYch9ibLJyB1duc5P6ejtKmDYJilZckBkfti');"></div>
+            </div>
+        </section>
+
+        <!-- Newsletter / Footer Call-to-action -->
+        <section class="glass-card rounded-2xl p-12 text-center border-2 border-primary/30 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4">
+                <span class="text-[80px] font-black text-white/5 select-none leading-none">SCORE</span>
+            </div>
+            <div class="relative z-10 space-y-8">
+                <h3 class="text-4xl font-black uppercase italic tracking-tighter">Join the High Score List</h3>
+                <p class="text-gray-400 max-w-xl mx-auto">Subscribe for early access to rare vault drops and exclusive trade-in bonuses.</p>
+                <div class="max-w-md mx-auto flex gap-2">
+                    <input class="flex-grow bg-white/5 border-white/10 rounded-lg focus:ring-primary focus:border-primary px-4 py-3 text-sm" placeholder="ENTER EMAIL ADDRESS" type="email"/>
+                    <button class="bg-primary text-black font-black px-6 py-3 rounded-lg hover:bg-primary/80 transition-colors uppercase text-sm">Join</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/50 border-t border-white/10 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold uppercase italic">Hidden Gem</h2>
+            </div>
+            <div class="flex gap-8 text-gray-500 text-sm font-medium">
+                <a class="hover:text-primary" href="#">Shipping</a>
+                <a class="hover:text-primary" href="#">Terms</a>
+                <a class="hover:text-primary" href="#">Privacy</a>
+                <a class="hover:text-primary" href="#">Contact</a>
+                <a class="hover:text-primary" href="arcade.html">Arcade</a>
+            </div>
+            <p class="text-gray-600 text-xs font-bold uppercase tracking-widest">© 2024 HIDDEN GEM VIDEO GAMES. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+</html>
